@@ -1,0 +1,7 @@
+{
+  "name": "Cruzforms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
