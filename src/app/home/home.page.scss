@@ -1,27 +1,44 @@
-#container {
+ion-header {
+
   text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  ion-title {
+    font-weight: bold;
+  }
+
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.error-message {
+  color: var(--ion-color-danger);
+  margin-left: 15px;
+  font-size: small;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+ion-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-  color: #8c8c8c;
+  ion-label {
+    font-weight: bolder;
+    font-size: large;
+    color: darkblue;
 
-  margin: 0;
+    ion-input {
+      color: #67568c;
+
+    }
+  }
 }
 
-#container a {
-  text-decoration: none;
+ion-footer {
+  ion-toolbar {
+    ion-title {
+      color: palevioletred;
+      font-size: small;
+
+      span {
+        font-style: italic;
+      }
+    }
+  }
 }

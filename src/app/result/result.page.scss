@@ -1,0 +1,38 @@
+ion-header {
+    text-align: center;
+
+    ion-title {
+        font-weight: bold;
+    }
+
+}
+
+ion-content {
+    ion-card {
+        padding: 8px 10px 5px 10px;
+
+        ion-label {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            color: rgb(47, 0, 69);
+            font-weight: bold;
+
+            ion-item {
+                font-size: medium;
+            }
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        ion-title {
+            color: palevioletred;
+            font-size: small;
+
+            span {
+                font-style: italic;
+            }
+        }
+    }
+}

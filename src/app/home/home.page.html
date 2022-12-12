@@ -1,20 +1,60 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>My Ionic Forms</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content>
+    <form [formGroup]="myForm" (ngSubmit)="submitFormValues()" novalidate>
+      <!--First Name-->
+      <ion-item lines="inset">
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input formControlName="fName" type="text" required></ion-input>
+      </ion-item>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.fName.errors?.required"> First Name is required. </span>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.fName.errors?.minlength"> Please enter valid first name. </span>
+      <!--Last Name-->
+      <ion-item lines="inset">
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input formControlName="lName" type="text" required></ion-input>
+      </ion-item>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.lName.errors?.required"> Last Name is required. </span>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.lName.errors?.minlength"> Please enter valid last name. </span>
+      <!--Date of Birth-->
+      <ion-item lines="inset">
+        <ion-label position="floating">Date of Birth</ion-label>
+        <br>
+        <ion-input formControlName="birthdate" type="date" required></ion-input>
+      </ion-item>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.birthdate.errors?.required"> Date of Birth is required </span>
+      <!--Email ID-->
+      <ion-item lines="inset">
+        <ion-label position="floating">Email ID</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+      </ion-item>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.email.errors?.required"> Email is required. </span>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.email.errors?.pattern"> Please provide valid email address. </span>
+      <!--Mobile Phone-->
+      <ion-item lines="inset">
+        <ion-label position="floating">Mobile Number</ion-label>
+        <ion-input formControlName="pNumber" type="text" required></ion-input>
+      </ion-item>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.pNumber.errors?.required"> Mobile number is required. </span>
+      <span class="error-message" *ngIf="isSubmitted && errorControl.pNumber.errors?.pattern"> Only numerical values allowed. </span>
+      <br>
+      <!--Buttons-->
+      <ion-row>
+        <ion-col>
+          <ion-button  type="submit"  color="success" expand="block" (click)="submitForm()">Submit</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button type="reset" expand="block" color="danger">Reset</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Created by <span>Yunice Cruz</span></ion-title>
+  </ion-toolbar>
+</ion-footer>
+
